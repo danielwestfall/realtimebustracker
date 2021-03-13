@@ -26,12 +26,8 @@ body {
     padding: 0; 
 }
 
-li, ul, a{
-    list-style-type: none;
-    
-}
-
-li:hover{
+td:hover{
     color: lightblue;
     background-color: darkblue;
+    text-decoration: none;
 }
