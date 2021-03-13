@@ -12,7 +12,7 @@ body {
 }
 
 .line-selection{
-    position: relative; 
+    position: absolute; 
     max-width: max-content;
     align-self: auto;
 }
