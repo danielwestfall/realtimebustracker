@@ -1,0 +1,26 @@
+
+body { 
+    margin: 0; 
+    padding: 0; 
+}
+
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+.line-selection{
+    position: relative; 
+
+}
+
+li ul{
+    list-style-type: none;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
