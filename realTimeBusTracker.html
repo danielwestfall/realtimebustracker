@@ -13,9 +13,6 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
 
-   <!-- mapbox.mapbox-streets-v8
-    mapbox.mapbox-traffic-v1-->
-
     <script src="script.js"></script>
     <style>
     body { margin: 0; padding: 0; }
@@ -25,16 +22,51 @@
 
 </head>
 <body>
+
+
     <div id='map' style='width: 800px; height: 600px;'></div>
 
 
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
-<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+        
+        <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 <div id="map"></div>
- 
+
+<div>
+    <ul>
+        <li><a href="">Line 8</a></li>
+        <li><a href="">Line 9</a></li>
+        <li><a href="">Line 11</a></li>
+        <li><a href="">Line 14</a></li>
+        <li><a href="">Line 15</a></li>
+        <li><a href="">Line 23</a></li>
+        <li><a href="">Line 24</a></li>
+        <li><a href="">Line 25</a></li>
+        <li><a href="">Line 38</a></li>
+        <li><a href="">Line 43</a></li>
+        <li><a href="">Line 59</a></li>
+        <li><a href="">Line 73</a></li>
+        <li><a href="">Line 74</a></li>
+        <li><a href="">Line 88</a></li>
+        <li><a href="">Line 139</a></li>
+        <li><a href="">Line 148</a></li>
+        <li><a href="">Line 159</a></li>
+        <li><a href="">Line 188</a></li>
+        <li><a href="">Line 205</a></li>
+        <li><a href="">Line 274</a></li>
+        <li><a href="">Line 390</a></li>
+        <li><a href="">Line 453</a></li>
+
+    </ul>
+</div>
+
+
+
+
+
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoiZGFud2VzdGZhbGwiLCJhIjoiY2tsdm9sMTZ2MDE0ZzJwbzNsZjZnanR3diJ9.siHEwArUzuKkseW3Xa72tg';
         var map = new mapboxgl.Map({
@@ -44,12 +76,12 @@
         zoom: 10.0,
         });
  
-map.addControl(
-new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
-);
+        map.addControl(
+        new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+        })
+    );
 </script>
 
 
