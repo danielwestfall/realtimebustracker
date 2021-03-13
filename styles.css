@@ -13,15 +13,11 @@ body {
 
 .line-selection{
     position: absolute; 
-    max-width: max-content;
-    align-self: auto;
-}
-
-li ul{
+    left: 850px;
+    background-color: lightblue;
     list-style-type: none;
-}
-
-a{
-    color:black;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkblue;
     text-decoration: none;
 }
