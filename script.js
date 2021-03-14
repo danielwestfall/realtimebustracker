@@ -11,10 +11,10 @@ var requestOptions = {
 
 	fetch("https://api.tfl.gov.uk/Line/" + line + "/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806", requestOptions)
 		.then(response => response.json())
-		.then(data => return data))
+		.then(data => console.log(data.lineStrings))
 		.catch(error => console.log('error', error));
-		let coords = data.lineStrings[0].substring(1, str.length - 1);
-
+		
+		console.log(data);
 	map.on('load', function () {
 		map.addSource('route', {
 		'type': 'geojson',
@@ -22,8 +22,8 @@ var requestOptions = {
 		'type': 'Feature',
 		'properties': {},
 		'geometry': {
-		'type': 'LineString',
-		'coordinates': coords
+		'type': 'MultiLineString',
+		'coordinates': data.lineStrings[0]
 		}
 		}
 		});
