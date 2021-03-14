@@ -19,7 +19,7 @@ async function switchLine(lineNumber){
 	let coordsLine = JSON.parse(busJson.lineStrings);
 
 	console.log(JSON.parse(busJson.lineStrings));
-
+/*
 	map.addSource(
 		'route', {
 			'type': 'geojson',
@@ -48,8 +48,11 @@ map.addLayer({
 		'line-width': 18
 		}
 		});
+*/
 
 
+
+		geojson.features[0].geometry.coordinates = coordsLine;
 };
 
 

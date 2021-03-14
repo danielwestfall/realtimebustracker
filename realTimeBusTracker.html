@@ -69,7 +69,40 @@
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl
     }));
+    
+    var geojson = {
+			'type': 'FeatureCollection',
+			'features': [
+			{
+			'type': 'Feature',
+			'geometry': {
+			'type': 'LineString',
+			'coordinates': [[0, 0]]
+			}
+			}
+			]
+			};
 
+			map.on('load', function () {
+			map.addSource('line', {
+			'type': 'geojson',
+			'data': geojson
+			});
+
+			map.addLayer({
+				'id': 'line-animation',
+				'type': 'line',
+				'source': 'line',
+				'layout': {
+				'line-cap': 'round',
+				'line-join': 'round'
+				},
+				'paint': {
+				'line-color': '#ed6498',
+				'line-width': 5,
+				'line-opacity': 0.8
+				}
+				});
 
 		});
 	
