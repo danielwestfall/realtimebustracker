@@ -16,7 +16,9 @@ async function switchLine(lineNumber){
 	var busJson = await response.json();
 	console.log(busJson);
 	
-	let coordsLine = JSON.parse(busJson.lineStrings)
+	let coordsLine = JSON.parse(busJson.lineStrings);
+
+	console.log(JSON.parse(busJson.lineStrings));
 
 	map.on('load', function () {
 		map.addSource(
