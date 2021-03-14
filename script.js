@@ -13,10 +13,7 @@ var requestOptions = {
 		.then(response => response.json())
 		.then(data => console.log(data))
 		.catch(error => console.log('error', error));
-		return data;
-};
-
-
+		
 
 	map.on('load', function () {
 		map.addSource('route', {
@@ -44,3 +41,4 @@ var requestOptions = {
 		}
 		});
 		});
+};
