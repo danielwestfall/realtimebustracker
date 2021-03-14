@@ -56,7 +56,7 @@ async function addLines(){
 
 function switchLine(line){
 	console.log(line);
-	getLineInfo(...line);
+	getLineInfo.apply(null, arguments),
 	addLines();
 }
 
