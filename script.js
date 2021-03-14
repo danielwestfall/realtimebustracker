@@ -20,22 +20,7 @@ async function switchLine(lineNumber){
 
 	console.log(JSON.parse(busJson.lineStrings));
 
-	map.on('load', function () {
-		map.addSource(
-			'route', {
-				'type': 'geojson',
-					'data': {
-						'type': 'Feature',
-						'properties': {},
-						'geometry': {
-							'type': 'LineString',
-							'coordinates': coordsLine
-						}
-					}
-				}
-			);
-			
-		});	
+
 
 };
 
