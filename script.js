@@ -14,9 +14,6 @@ var requestOptions = {
 		.then(data => console.log(data.lineStrings))
 		.catch(error => console.log('error', error));
 		
-		let newArray = data.lineStrings[0];
-		let realNewArray = newArray[0];
-		console.log(realNewArray);
 
 	map.on('load', function () {
 		map.addSource('route', {
@@ -26,7 +23,7 @@ var requestOptions = {
 		'properties': {},
 		'geometry': {
 		'type': 'LineString',
-		'coordinates': data.lineStrings
+		'coordinates': data.lineStrings[0]
 		}
 		}
 		});
