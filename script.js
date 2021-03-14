@@ -11,7 +11,7 @@ var requestOptions = {
 
 	fetch("https://api.tfl.gov.uk/Line/" + line + "/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806", requestOptions)
 		.then(response => response.json())
-		.then(data => console.log(data))
+		.then(data => console.log(data.lineStrings[0]))
 		.catch(error => console.log('error', error));
 		
 
