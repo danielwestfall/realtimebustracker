@@ -8,6 +8,7 @@ async function switchLine(line){
 		method: 'GET',
 		headers: myHeaders,
 		redirect: 'follow'
+	}
 
 	let url = "https://api.tfl.gov.uk/Line/" + line + "/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806"
 
@@ -15,32 +16,38 @@ async function switchLine(line){
 	var busJson = await response.json();
 	return busJson.data;
 }
+
 	let coordsLine = JSON.parse(busJson.data.lineStrings)
+	
 	console.log(busJson);
-	map.on('load', function () {
-		map.addSource('route', {
-		'type': 'geojson',
-		'data': {
-		'type': 'Feature',
-		'properties': {},
-		'geometry': {
-		'type': 'MultiLineString',
-		'coordinates': coordsline
-		}
-		}
-		});
-		map.addLayer({
-		'id': 'route',
-		'type': 'line',
-		'source': 'route',
-		'layout': {
+	
+map.on('load', function () {
+	map.addSource(
+		'route', {
+			'type': 'geojson',
+				'data': {
+					'type': 'Feature',
+					'properties': {},
+					'geometry': {
+						'type': 'LineString',
+						'coordinates': coordsline
+					}
+				}
+			}
+		);
+		
+map.addLayer({
+	'id': 'route',
+	'type': 'line',
+	'source': 'route',
+	'layout': {
 		'line-join': 'round',
 		'line-cap': 'round'
 		},
-		'paint': {
+	'paint': {
 		'line-color': '#FFF',
 		'line-width': 18
 		}
-		});
-		});
-};
+		}
+	);
+});
