@@ -12,9 +12,9 @@ async function getLineInfo(lineNumber){
 
 	console.log(url)
 
-	//let response = await fetch(url , requestOptions);
-	//var busJson = await response.json();
-	//return busJson.data;
+	let response = await fetch(url , requestOptions);
+	var busJson = await response.json();
+	return busJson.data;
 }
 
 async function addLines(){
@@ -59,7 +59,7 @@ function switchLine(line){
 	let lineNum = line;
 	console.log(lineNum);
 	getLineInfo(lineNum);
+	addLines();
 }
 
 
-	//addLines();
