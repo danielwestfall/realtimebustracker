@@ -14,7 +14,8 @@ async function switchLine(lineNumber){
 
 	let response = await fetch(url , requestOptions);
 	var busJson = await response.json();
-		
+	console.log(busJson);
+	
 	let coordsLine = JSON.parse(busJson.data.lineStrings)
 
 	map.on('load', function () {
