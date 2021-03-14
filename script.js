@@ -20,9 +20,9 @@ async function switchLine(lineNumber){
 
 	console.log(JSON.parse(busJson.lineStrings));
 
-	let map = document.getElementById(map);
+	let map = document.getElementById(mapbox);
 
-	map.addSource(
+	mapbox.addSource(
 		'route', {
 			'type': 'geojson',
 				'data': {
@@ -37,7 +37,7 @@ async function switchLine(lineNumber){
 		);
 		
 		
-map.addLayer({
+mapbox.addLayer({
 	'id': 'route',
 	'type': 'line',
 	'source': 'route',
