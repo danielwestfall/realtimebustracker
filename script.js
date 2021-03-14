@@ -53,7 +53,8 @@ async function addLines(){
 };
 
 function switchLine(line){
-	getLineInfo(line);
+	console.log(line);
+	getLineInfo(...line);
 	addLines();
 }
 
