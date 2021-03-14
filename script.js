@@ -1,4 +1,4 @@
-async function getLineInfo(lineNumber){
+async function switchLine(lineNumber){
 	var myHeaders = new Headers();
 	myHeaders.append("Cookie", "__cfduid=ddd8e249dcd6cce5220655528e9813aa21615584664");
 	
@@ -14,12 +14,8 @@ async function getLineInfo(lineNumber){
 
 	let response = await fetch(url , requestOptions);
 	var busJson = await response.json();
-	return busJson.data;
-}
-
-async function addLines(){
-	var locations = await switchLine();
-	let coordsLine = JSON.parse(locations.data.lineStrings)
+		
+	let coordsLine = JSON.parse(busJson.data.lineStrings)
 
 	map.on('load', function () {
 		map.addSource(
@@ -53,13 +49,5 @@ async function addLines(){
 	});	
 
 };
-
-function switchLine(line){
-	console.log(line);
-	let lineNum = line;
-	console.log(lineNum);
-	getLineInfo(lineNum);
-	addLines();
-}
 
 
