@@ -7,8 +7,8 @@ async function getLineInfo(line){
 		headers: myHeaders,
 		redirect: 'follow'
 	}
-
-	let url = "https://api.tfl.gov.uk/Line/" + line + "/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806"
+	console.log(line);
+	let url = "https://api.tfl.gov.uk/Line/8/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806"
 
 	let response = await fetch(url , requestOptions);
 	var busJson = await response.json();
