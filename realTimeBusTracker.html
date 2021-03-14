@@ -63,24 +63,7 @@
     });
 
     map.on('load', function () {
-		map.addSource(
-			'route', {
-				'type': 'geojson',
-					'data': {
-						'type': 'Feature',
-						'properties': {},
-						'geometry': {
-							'type': 'LineString',
-							'coordinates': [
-                                [-0.115, 51.500],
-                                [-0.130, 51.700],
-                            ]
-						}
-					}
-				}
-			);
-			
-			
+	
 	map.addLayer({
 		'id': 'route',
 		'type': 'line',

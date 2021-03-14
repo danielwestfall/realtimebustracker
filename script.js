@@ -19,10 +19,22 @@ async function switchLine(lineNumber){
 	let coordsLine = JSON.parse(busJson.lineStrings);
 
 	console.log(JSON.parse(busJson.lineStrings));
-	
-	document.container.map.route.type.data.geometry.coordinates = coordsLine;
-	document.map.route.type.data.geometry.coordinates = coordsLine;
 
+	map.remove('route');
+
+	map.addSource(
+		'route', {
+			'type': 'geojson',
+				'data': {
+					'type': 'Feature',
+					'properties': {},
+					'geometry': {
+						'type': 'LineString',
+						'coordinates': coordsLine
+					}
+				}
+			}
+		);
 
 
 };
