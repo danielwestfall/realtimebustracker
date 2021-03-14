@@ -13,6 +13,8 @@ fetch("https://api.tfl.gov.uk/Line/" + lineNo + "/Route/Sequence/inbound?app_id=
 	.then(response => response.json())
 	.then(data => console.log(data))
 	.catch(error => console.log('error', error));
+};
+
 
 /*
 	map.on('load', function () {
