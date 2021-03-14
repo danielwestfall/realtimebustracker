@@ -20,8 +20,7 @@ async function switchLine(lineNumber){
 
 	console.log(JSON.parse(busJson.lineStrings));
 	
-	let coordLocation = getElementById(map.route.coordinates);
-	coordLocation = coordsLine;
+	map.route.type.data.geometry.coordinates = coordsLine;
 
 
 
