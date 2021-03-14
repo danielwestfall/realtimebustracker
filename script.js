@@ -20,7 +20,6 @@ async function switchLine(lineNumber){
 
 	console.log(JSON.parse(busJson.lineStrings));
 
-	
 
 	map.addSource(
 		'route', {
@@ -35,6 +34,21 @@ async function switchLine(lineNumber){
 				}
 			}
 		);
+		
+		
+map.addLayer({
+	'id': 'route',
+	'type': 'line',
+	'source': 'route',
+	'layout': {
+		'line-join': 'round',
+		'line-cap': 'round'
+		},
+	'paint': {
+		'line-color': '#FFF',
+		'line-width': 18
+		}
+		});
 
 
 };
