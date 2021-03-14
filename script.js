@@ -1,4 +1,4 @@
-async function getLineInfo(line){
+async function getLineInfo(lineNumber){
 	var myHeaders = new Headers();
 	myHeaders.append("Cookie", "__cfduid=ddd8e249dcd6cce5220655528e9813aa21615584664");
 	
@@ -7,8 +7,8 @@ async function getLineInfo(line){
 		headers: myHeaders,
 		redirect: 'follow'
 	}
-	console.log(line);
-	let url = "https://api.tfl.gov.uk/Line/" + line + "/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806"
+	console.log(lineNumber);
+	let url = "https://api.tfl.gov.uk/Line/" + lineNumber + "/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806"
 
 	console.log(url)
 
@@ -58,7 +58,8 @@ function switchLine(line){
 	console.log(line);
 	let lineNum = line;
 	console.log(lineNum);
+	getLineInfo(lineNum);
 }
 
-getLineInfo(lineNum);
-	addLines();
+
+	//addLines();
