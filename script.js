@@ -1,5 +1,3 @@
-
-
 async function getLineInfo(line){
 	var myHeaders = new Headers();
 	myHeaders.append("Cookie", "__cfduid=ddd8e249dcd6cce5220655528e9813aa21615584664");
@@ -18,7 +16,7 @@ async function getLineInfo(line){
 }
 
 async function addLines(){
-	var locations = await switchLine(line);
+	var locations = await switchLine();
 	let coordsLine = JSON.parse(locations.data.lineStrings)
 
 	map.on('load', function () {
