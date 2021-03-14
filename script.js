@@ -36,7 +36,7 @@ var requestOptions = {
 		'line-cap': 'round'
 		},
 		'paint': {
-		'line-color': '#888',
+		'line-color': '#000',
 		'line-width': 8
 		}
 		});
