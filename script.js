@@ -19,16 +19,20 @@ async function switchLine(lineNumber){
 	let coordsLine = JSON.parse(busJson.lineStrings);
 
 	console.log(JSON.parse(busJson.lineStrings));
+	geojson.features[0].geometry.coordinates = coordsLine;
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFud2VzdGZhbGwiLCJhIjoiY2tsdm9sMTZ2MDE0ZzJwbzNsZjZnanR3diJ9.siHEwArUzuKkseW3Xa72tg';
-    var map = new mapboxgl.Map({
+};
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFud2VzdGZhbGwiLCJhIjoiY2tsdm9sMTZ2MDE0ZzJwbzNsZjZnanR3diJ9.siHEwArUzuKkseW3Xa72tg';
+
+var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/danwestfall/ckm70cxfd1tot17m894ctkfqv',
     center: [-0.115, 51.500],
     zoom: 10.0,
     });
 
-    map.on('load', function () {
+map.on('load', function () {
 		
     map.addControl(
     new MapboxGeocoder({
@@ -49,33 +53,26 @@ var geojson = {
 	]
 };
 
-map.on('load', function () {
 map.addSource('line', {
-'type': 'geojson',
-'data': geojson
-});
+		'type': 'geojson',
+		'data': geojson
+	});
 
 
 map.addLayer({
-    'id': 'line-animation',
-    'type': 'line',
-    'source': 'line',
-    'layout': {
-        'line-cap': 'round',
-        'line-join': 'round'
-    },
-    'paint': {
-        'line-color': '#ed6498',
-        'line-width': 5,
-        'line-opacity': 0.8
-    }
-});
-
-
-
-
-
-
+		'id': 'line-animation',
+		'type': 'line',
+		'source': 'line',
+		'layout': {
+			'line-cap': 'round',
+			'line-join': 'round'
+		},
+		'paint': {
+			'line-color': '#ed6498',
+			'line-width': 5,
+			'line-opacity': 0.8
+		}
+	});
 
 /*
 	map.addSource(
@@ -107,10 +104,3 @@ map.addLayer({
 		}
 		});
 */
-
-
-
-		geojson.features[0].geometry.coordinates = coordsLine;
-};
-
-
