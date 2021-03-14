@@ -20,7 +20,7 @@ async function switchLine(lineNumber){
 
 	console.log(JSON.parse(busJson.lineStrings));
 
-	map.remove('route');
+	
 
 	map.addSource(
 		'route', {
