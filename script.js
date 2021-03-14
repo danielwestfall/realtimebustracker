@@ -13,7 +13,7 @@ var requestOptions = {
 		.then(response => response.json())
 		.then(data => console.log(data.lineStrings[0]))
 		.catch(error => console.log('error', error));
-		
+		let coords = data.lineStrings[0].substring(1, str.length - 1);
 
 	map.on('load', function () {
 		map.addSource('route', {
@@ -23,7 +23,7 @@ var requestOptions = {
 		'properties': {},
 		'geometry': {
 		'type': 'LineString',
-		'coordinates': data.lineStrings[0]
+		'coordinates': coords
 		}
 		}
 		});
