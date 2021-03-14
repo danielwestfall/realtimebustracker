@@ -23,7 +23,7 @@ var requestOptions = {
 		'properties': {},
 		'geometry': {
 		'type': 'LineString',
-		'coordinates': [data.lineStrings]
+		'coordinates': data.lineStrings
 		}
 		}
 		});
