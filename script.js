@@ -22,7 +22,7 @@ var requestOptions = {
 		'type': 'Feature',
 		'properties': {},
 		'geometry': {
-		'type': 'MultiLineString',
+		'type': 'LineString',
 		'coordinates': data.lineStrings[0]
 		}
 		}
