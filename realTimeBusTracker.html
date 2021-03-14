@@ -80,7 +80,7 @@
 				}
 			);
 			
-		});	
+			
 	map.addLayer({
 		'id': 'route',
 		'type': 'line',
@@ -93,16 +93,20 @@
 			'line-color': '#FFF',
 			'line-width': 18
 			}
-			}
-		);
-	
+			});
 
     map.addControl(
     new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl
-    })
-);
+    }));
+
+
+		});
+	
+
+
+
 </script>
 
 <div id="container">
