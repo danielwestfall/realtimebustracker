@@ -16,6 +16,7 @@
     <!--JavaScript-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <script src="script.js"></script>
+    <script src="stoplocations.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
     <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
@@ -68,122 +69,6 @@ var map = new mapboxgl.Map({
     center: [-0.115, 51.500],
     zoom: 10.0,
     });
-
-async function switchLine(lineNumber){
-
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/danwestfall/ckm70cxfd1tot17m894ctkfqv',
-    center: [-0.115, 51.500],
-    zoom: 10.0,
-    });
-
-	var myHeaders = new Headers();
-	myHeaders.append("Cookie", "__cfduid=ddd8e249dcd6cce5220655528e9813aa21615584664");
-
-	var requestOptions = {
-		method: 'GET',
-		headers: myHeaders,
-		redirect: 'follow'
-	}
-	
-	let url = "https://api.tfl.gov.uk/Line/" + lineNumber + "/Route/Sequence/inbound?app_id=MIT%20xPro%20Homework&app_key=03cd84bdd6b540a8a6559c46c4ddf806"
-
-	let response = await fetch(url , requestOptions);
-	var busJson = await response.json();
-
-coordsLine = JSON.parse(busJson.lineStrings);
-
-var geojson = {
-	'type': 'Feature',
-	'properties': {},
-	'geometry': {
-	'type': 'LineString',
-	'coordinates': coordsLine[0]
-	}
-	};
-
-map.addSource('route', {
-	'type': 'geojson',
-	'data': geojson
-	});
-
-map.addLayer({
-	'id': 'route',
-	'type': 'line',
-	'source': 'route',
-	'layout': {
-	'line-join': 'round',
-	'line-cap': 'round'
-	},
-	'paint': {
-	'line-color': '#FFF',
-	'line-width': 3
-	}
-    
-	});
-
-    map.addLayer({
-    'id': 'markers',
-    'type': 'symbol',
-	'source': 'route',
-    'layout': {
-    'icon-allow-overlap': true
-    }
-    });
-
-
-
-var coordinates = coordsLine[0];
-
-var bounds = coordinates.reduce(function (bounds, coord) {
-    return bounds.extend(coord);
-        }, 
-    new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
-
-    map.fitBounds(bounds, {
-        padding: 20
-    });
-
-map.on('click', function(e) {
-
-});
-
-const data = busJson.stations;
-const length = data.length;
-
-var busStops = [];
-
-for (let i = 0; i < length; i++) {
-
-    let a = data[i];
-    let bsName = a.name;
-    let bsCoord = [a.lon, a.lat]
-    let lineListing = "| ";
-    let itemNum = i;
-    
-    for (let j = 0; j < a.lines.length; j++) {
-            const b = a.lines[j].name;
-            lineListing = lineListing +  b.toString() + " | ";
-        };
-
-    busStops.push([itemNum, bsName, bsCoord, lineListing])
-
-}
-
-console.log(busStops);
-busStops.forEach(element =>
-
-    element.itemNum = new mapboxgl.Marker()
-        .setLngLat([element[2][0], element[2][1]])
-        .setPopup(new mapboxgl.Popup({ offset: [0, -15] })
-        .setHTML('<h3>' + element[1] + '</h3><p> Lines that service this route: <br>' + element[3] + '</p>'))
-        .addTo(map)
-)
-
-
-};
-
 
 
 var userSelection = document.getElementsByClassName('lineButton');
