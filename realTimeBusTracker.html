@@ -25,32 +25,32 @@
 
 </head>
 <body>
-<div id='map' style='width: 800px; height: 600px;'></div>
+<div id='map' ></div>
 
 <div class="line-selection">
     <table>
-        <tr><td><a class="lineButton">Line 8</a></td></tr>
-        <tr><td><a class="lineButton">Line 9</a></td></tr>
-        <tr><td><a class="lineButton">Line 11</a></td></tr>
-        <tr><td><a class="lineButton">Line 14</a></td></tr>
-        <tr><td><a class="lineButton">Line 15</a></td></tr>
-        <tr><td><a class="lineButton">Line 23</a></td></tr>
-        <tr><td><a class="lineButton">Line 24</a></td></tr>
-        <tr><td><a class="lineButton">Line 25</a></td></tr>
-        <tr><td><a class="lineButton">Line 38</a></td></tr>
-        <tr><td><a class="lineButton">Line 43</a></td></tr>
-        <tr><td><a class="lineButton">Line 59</a></td></tr>
-        <tr><td><a class="lineButton">Line 73</a></td></tr>
-        <tr><td><a class="lineButton">Line 74</a></td></tr>
-        <tr><td><a class="lineButton">Line 88</a></td></tr>
-        <tr><td><a class="lineButton">Line 139</a></td></tr>
-        <tr><td><a class="lineButton">Line 148</a></td></tr>
-        <tr><td><a class="lineButton">Line 159</a></td></tr>
-        <tr><td><a class="lineButton">Line 188</a></td></tr>
-        <tr><td><a class="lineButton">Line 205</a></td></tr>
-        <tr><td><a class="lineButton">Line 274</a></td></tr>
-        <tr><td><a class="lineButton">Line 390</a></td></tr>
-        <tr><td><a class="lineButton">Line 453</a></td></tr>
+        <tr><td><button class="lineButton">Line 8</button></td></tr>
+        <tr><td><button class="lineButton">Line 9</button></td></tr>
+        <tr><td><button class="lineButton">Line 11</button></td></tr>
+        <tr><td><button class="lineButton">Line 14</button></td></tr>
+        <tr><td><button class="lineButton">Line 15</button></td></tr>
+        <tr><td><button class="lineButton">Line 23</button></td></tr>
+        <tr><td><button class="lineButton">Line 24</button></td></tr>
+        <tr><td><button class="lineButton">Line 25</button></td></tr>
+        <tr><td><button class="lineButton">Line 38</button></td></tr>
+        <tr><td><button class="lineButton">Line 43</button></td></tr>
+        <tr><td><button class="lineButton">Line 59</button></td></tr>
+        <tr><td><button class="lineButton">Line 73</button></td></tr>
+        <tr><td><button class="lineButton">Line 74</button></td></tr>
+        <tr><td><button class="lineButton">Line 88</button></td></tr>
+        <tr><td><button class="lineButton">Line 139</button></td></tr>
+        <tr><td><button class="lineButton">Line 148</button></td></tr>
+        <tr><td><button class="lineButton">Line 159</button></td></tr>
+        <tr><td><button class="lineButton">Line 188</button></td></tr>
+        <tr><td><button class="lineButton">Line 205</button></td></tr>
+        <tr><td><button class="lineButton">Line 274</button></td></tr>
+        <tr><td><button class="lineButton">Line 390</button></td></tr>
+        <tr><td><button class="lineButton">Line 453</button></td></tr>
     </table>
 </div>
 
@@ -59,7 +59,7 @@
 </div>
 
 <script>
-var coordsLine = "";
+//Map created - centered over London - no bus lines shown until a line is selected
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGFud2VzdGZhbGwiLCJhIjoiY2tsdm9sMTZ2MDE0ZzJwbzNsZjZnanR3diJ9.siHEwArUzuKkseW3Xa72tg';
 
@@ -68,9 +68,9 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/danwestfall/ckm70cxfd1tot17m894ctkfqv',
     center: [-0.115, 51.500],
     zoom: 10.0,
-    });
+});
 
-
+//Dynamically switch lines - this will make it easier to do more with later for the interface plus practice with DOM elements
 var userSelection = document.getElementsByClassName('lineButton');
 
 for(var i = 0; i < userSelection.length; i++) {
@@ -84,18 +84,7 @@ for(var i = 0; i < userSelection.length; i++) {
     })(i);
 }
 
-
-
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
