@@ -39,16 +39,12 @@ List of features ready:
 * Bus and stop location data in popups.
 
 To-do list:
-* More lines?
 * CSS improvements on side nav bar.
-
-Known bugs:
-* Mouth open/close animation freezes when there's an even number of PacMen on the screen.
 
 ## Status
 Project is: _in progress_
 
-Project done to class specifications. I have added code to make PacMen face the direction they are moving. I also added animation that makes PacMen open and close their mouthes. There is a known bug as when there are an even number of PacMen on the screen the animation breaks. This will be fixed in the future.
+Project done to class specifications at first. Since then I changed the location to London, added the ability to change bus lines, and added the capability to zoom in on the individual line. 
 
 ## Inspiration
 Project created by MIT xPro Full Stack Web Development Course. Completed and modified by Daniel Westfall.
