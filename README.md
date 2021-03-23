@@ -4,6 +4,7 @@
 ## Table of contents
 ---
 * [General info](#general-info)
+* [Links](#links)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
@@ -11,6 +12,7 @@
 * [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
+
 
 ## General info
 ---
@@ -20,6 +22,12 @@ This project was introduced to introduce multiple challenges:
 * Use the Mapbox JavaScript library to build a map to track a bus
 
 Our original project was to the MBTA (Massachusetts Bay Transit Authority) and track bus 1 that runs from MIT to Harvard in real time. After the assignment was submitted, we were encouraged to take what we learned and use other APIs and customize our maps for more practice and see what we can do. I chose to leave the US and try using the London Transport API. I setup custom styles for the map and was inspired by a document I found when searching for information about bus routes in London to try and tackle, not one, but 22 different bus lines. I used the tutorials on Mapbox and created a nav bar to select a line, and when selected the map will look at the coordinates of the bus stops on that line and zoom in to make that line the focus. Each bus stop is marked on the map with a blue marker, and has a popup when clicked that gives the name of the stop as well as the other lines that connect to that stop. During operating hours the buses are marked with purple makers that display INFORMATION HERE. My biggest challenge here wa that the busses don't have live GPS tracking, but rather just the last stop they were at in Naptan codes. I ended up finding CSV files with data that connected the the Naptan codes with the bus stop coordinates. With that I could give the busses latitudinal and longitudinal coordinates. Also the live bus data listed some busses twice as it was more of a live feed than a regenerated document. I had to filter out old bus data to make sure I had the most current location data. 
+
+## Links
+---
+* [Open the Project](https://danielwestfall.github.io/realTimeBusTracker/realTimeBusTracker.html)
+* [View it on GitHub](https://github.com/danielwestfall/realTimeBusTracker)
+* [View my Portfolio](https://danielwestfall.github.io/)
 
 ## Screenshots
 ---
