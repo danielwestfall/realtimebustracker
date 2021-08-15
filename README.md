@@ -1,5 +1,5 @@
 # Project Name
-> [Real Time Bus Tracker - Click here to view!](https://danielwestfall.github.io/realTimeBusTracker/realTimeBusTracker.html)
+> [Real Time Bus Tracker - Click here to view!](https://danielwestfall.github.io/realtimebustracker/realtimebustracker.html)
 
 ## Table of contents
 ---
@@ -25,8 +25,8 @@ Our original project was to the MBTA (Massachusetts Bay Transit Authority) and t
 
 ## Links
 ---
-* [Open the Project](https://danielwestfall.github.io/realTimeBusTracker/realTimeBusTracker.html)
-* [View it on GitHub](https://github.com/danielwestfall/realTimeBusTracker)
+* [Open the Project](https://danielwestfall.github.io/realtimebustracker/realtimebustracker.html)
+* [View it on GitHub](https://github.com/danielwestfall/realtimebustracker)
 * [View my Portfolio](https://danielwestfall.github.io/)
 
 ## Screenshots
@@ -41,7 +41,7 @@ Our original project was to the MBTA (Massachusetts Bay Transit Authority) and t
 
 ## Setup
 ---
-Feel free to fork it and make your own changes. You can also download the files to your local machine, unzip them into a folder, and view it in your local browser. Or you can check out the project here (https://danielwestfall.github.io/realTimeBusTracker/realTimeBusTracker.html). 
+Feel free to fork it and make your own changes. You can also download the files to your local machine, unzip them into a folder, and view it in your local browser. Or you can check out the project here (https://danielwestfall.github.io/realtimebustracker/realtimebustracker.html). 
 
 Click on any of the lines listed on the right hand side of the page and it will show you the latest from that bus line. Do note that the London bus service does not run 24 hours a day. During the night no busses will be shown.
 
