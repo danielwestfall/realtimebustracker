@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>London's Key Bus Line Real Time Tracker </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">     
+
+    <!--JavaScript-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <script src="script.js"></script>
+    <script src="stoplocations.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    
+
+</head>
+<body>
+<div id='map' ></div>
+
+<div class="line-selection">
+    <table>
+        <tr><td><button class="lineButton">Line 8</button></td></tr>
+        <tr><td><button class="lineButton">Line 9</button></td></tr>
+        <tr><td><button class="lineButton">Line 11</button></td></tr>
+        <tr><td><button class="lineButton">Line 14</button></td></tr>
+        <tr><td><button class="lineButton">Line 15</button></td></tr>
+        <tr><td><button class="lineButton">Line 23</button></td></tr>
+        <tr><td><button class="lineButton">Line 24</button></td></tr>
+        <tr><td><button class="lineButton">Line 25</button></td></tr>
+        <tr><td><button class="lineButton">Line 38</button></td></tr>
+        <tr><td><button class="lineButton">Line 43</button></td></tr>
+        <tr><td><button class="lineButton">Line 59</button></td></tr>
+        <tr><td><button class="lineButton">Line 73</button></td></tr>
+        <tr><td><button class="lineButton">Line 74</button></td></tr>
+        <tr><td><button class="lineButton">Line 88</button></td></tr>
+        <tr><td><button class="lineButton">Line 139</button></td></tr>
+        <tr><td><button class="lineButton">Line 148</button></td></tr>
+        <tr><td><button class="lineButton">Line 159</button></td></tr>
+        <tr><td><button class="lineButton">Line 188</button></td></tr>
+        <tr><td><button class="lineButton">Line 205</button></td></tr>
+        <tr><td><button class="lineButton">Line 274</button></td></tr>
+        <tr><td><button class="lineButton">Line 390</button></td></tr>
+        <tr><td><button class="lineButton">Line 453</button></td></tr>
+    </table>
+</div>
+
+<div id="container">
+    <!-- populated by JS-->
+</div>
+
+<script>
+//Map created - centered over London - no bus lines shown until a line is selected
+
+mapboxgl.accessToken = REACT_APP_MAPBOX_ACCESS_TOKEN;
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/danwestfall/ckm70cxfd1tot17m894ctkfqv',
+    center: [-0.115, 51.500],
+    zoom: 10.0,
+});
+
+//Dynamically switch lines - this will make it easier to do more with later for the interface plus practice with DOM elements
+var userSelection = document.getElementsByClassName('lineButton');
+
+for(var i = 0; i < userSelection.length; i++) {
+    (function(index) {
+        userSelection[index].addEventListener("click", function() {
+            let newArray = [8,9,11,14,15,23,24,25,38,43,59,73,74,88,139,148,159,188,205,274,390,453];
+            let arg = newArray[index];
+            switchLine(arg);
+            
+        })
+    })(i);
+}
+
+</script>
+
+</body>
+</html>

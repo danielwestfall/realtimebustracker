@@ -2,17 +2,12 @@
 body { 
     margin: 0; 
     padding: 0; 
-    background-color: #10291b;
+
     height: 100%;
 }
 
-#map { 
-    position: absolute; 
-    top: 0; 
-    bottom: 0;
-    margin: 0; 
-    padding: 0; 
-    width: calc(100% - 125px);
+.map-container {
+    height: 85vh;
 }
 
 .line-selection {
@@ -42,16 +37,10 @@ tr td{
 }
 
 button {
-    padding: 0px 0px;
     font-size: 1em;
-    text-align: center;
     cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #10291b;
-    border: none;
-    width: 100%;
-    height: 100%;
+    width: 10em;
+    height: 2em;
 }
 
 button :nth-child(2+1){
